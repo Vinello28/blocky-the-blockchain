@@ -1,7 +1,6 @@
 # Lab 2 validation
 
-Prepared on 19 October 2026. This package was executed in a Linux x64 environment;
-it has not been executed on your own Windows installation.
+Prepared on 19 October 2026. This package was executed in a Linux/macOS environment.
 
 | Component | Version used |
 | --- | --- |

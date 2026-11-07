@@ -14,7 +14,13 @@ contract Ticket{
     function initTicket (uint256 ticketnumber, uint256 money) external
     {
         require(ticketnumber !=0, "it's a invalid ticketnumber!");
-        require(!tickets[ticketnumber].valid, "Ticka already exist mate!");
+
+        if(tickets[ticketnumber].valid)
+        {
+            revert("Ticket already exist mate!");
+        }
+        
+        // require(!tickets[ticketnumber].valid, "Ticket already exist mate!");   //old code
 
         tickets[ticketnumber]=TicketContainer({
             id: ticketnumber,
@@ -22,6 +28,10 @@ contract Ticket{
             price: money,
             valid: true
         }); 
+
+        // check invariant state
+        assert(tickets[ticketnumber].valid);
+        assert(tickets[ticketnumber].owner==msg.sender);
     }
 
     function getTicket(uint256 ticketnumber) external view returns (TicketContainer memory) 
@@ -30,15 +40,19 @@ contract Ticket{
         return tickets[ticketnumber];
     }
 
-    function invaliTicket(uint256 ticketnumber) external 
+    function invalidateTicket(uint256 ticketnumber) external 
     {
-        require(tickets[ticketnumber].valid, "nope, not valid!");
-        require(
-            tickets[ticketnumber].owner==msg.sender,
-            "Gotchu!"
-        );
+        require(tickets[ticketnumber].valid, "ticket not valid!");
+
+        if (tickets[ticketnumber].owner!=msg.sender)
+        {
+            revert("I don't think you own this ticket mate!");
+        }
 
         tickets[ticketnumber].valid=false;
+
+        // check invariant state
+        assert(!tickets[ticketnumber].valid);
     }
 
 }

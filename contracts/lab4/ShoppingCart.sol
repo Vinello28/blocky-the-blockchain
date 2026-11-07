@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
-// NOTE: a possible improvement could be the use of "indexed" keywords to allow off-chain filtering.
+// TODO: a possible improvement could be the use of "indexed" keywords to allow off-chain filtering. 
+// keep in mind for lecture/project.
 
 
 contract ShoppingCart {      

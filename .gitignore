@@ -1,0 +1,41 @@
+# Node.js / Dependencies
+node_modules/
+package-lock.json.log
+
+# Hardhat & Solidity
+artifacts/
+cache/
+typechain/
+typechain-types/
+coverage/
+coverage.json
+
+# Environment variables & secrets (chiavi private, API keys)
+.env
+.env.local
+.env.*.local
+*.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS metadata
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

@@ -1,0 +1,22 @@
+{
+  "name": "lab2-hardhat-2026",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Lab 2 local Solidity demonstration adapted from Truffle to Hardhat 3",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "compile": "hardhat compile",
+    "node": "hardhat node --hostname 127.0.0.1",
+    "deploy": "hardhat run scripts/deploy.ts --network localhost",
+    "console": "hardhat console --network localhost"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "4.2.1",
+    "ethers": "6.17.0",
+    "hardhat": "3.20.0",
+    "solc": "0.8.28"
+  }
+}

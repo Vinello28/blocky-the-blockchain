@@ -111,6 +111,16 @@ const instance = await ethers.getContractAt("TestContract", "DEPLOYED_ADDRESS");
 (await instance.i()).toString();
 (await instance.j()).toString();
 await instance.getAddress();
+
+//or this 
+const { ethers } = await network.create();
+
+const child = await ethers.deployContract("Child");
+await child.waitForDeployment();
+
+await child.getAddress();
+await child.sayHelloMate();
+
 ```
 
 Exit with:

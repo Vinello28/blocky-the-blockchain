@@ -11,7 +11,12 @@
     "compile": "hardhat compile",
     "node": "hardhat node --hostname 127.0.0.1",
     "deploy": "hardhat run scripts/deploy.ts --network localhost",
-    "console": "hardhat console --network localhost"
+    "console": "hardhat console --network localhost",
+    "lab6:retrieve": "hardhat run contracts/lab6/RetrieveTest.ts --network localhost",
+    "lab6:filter": "hardhat run contracts/lab6/EventFilterTest.ts --network localhost",
+    "lab6:subscription": "hardhat run contracts/lab6/EventSubscriptionTest.ts --network localhost",
+    "lab6:token": "hardhat run contracts/lab6/TokenTest.ts --network localhost",
+    "lab6:misunders": "hardhat run contracts/lab6/MisundersToken/MisundersTokenTest.ts --network localhost"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "4.2.1",

@@ -8,4 +8,6 @@ interface ERC20Interface {
     function getAllowance(address owner, address spender) external view returns (uint256);
     function mint(address to, uint256 amount) external;
     function burn(address from, uint256 amount) external;
+    function minting(address initAddress, address toAddress, uint256 mintAmount) external;
+    function burning(address initAddress, address toAddress, uint256 burnAmount) external;
 }

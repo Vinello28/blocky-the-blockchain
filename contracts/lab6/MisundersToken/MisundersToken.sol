@@ -79,4 +79,14 @@ contract MisundersToken {
         totalSupply -= supplyAmount;
         emit Transfer(from, address(0), supplyAmount);
     }
+
+    function minting(address initAddress, address toAddress, uint256 mintAmount) public onlyOwner {
+        require(initAddress == owner, "Sender is not the token owner");
+        mint(toAddress, mintAmount);
+    }
+
+    function burning(address initAddress, address toAddress, uint256 burnAmount) public onlyOwner {
+        require(initAddress == owner, "Sender is not the token owner");
+        burn(toAddress, burnAmount);
+    }
 }

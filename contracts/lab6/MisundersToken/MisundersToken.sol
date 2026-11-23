@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.28;
 
+/// @title MisundersToken
+/// @author G.Vianello
+/// @notice The abomination for all of misunderstandings as a token, enjoy that.
 contract MisundersToken {
     string public name = "MisundersToken";
     string public symbol = "MUND";
